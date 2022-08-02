@@ -4,26 +4,39 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
-    minHeight: "74px",
-    backgroundColor: theme.palette.secondary.dark,
+    minHeight: "100vh",
+    backgroundColor: theme.palette.primary.light,
+    display: "flex",
+    justifyContent: "center",
+    margin: "0 auto",
+  },
+  row: {
+    [theme.breakpoints.up("lg")]: {
+      maxWidth: "1000px",
+    },
+
+    [theme.breakpoints.up("xl")]: {
+      maxWidth: "1400px",
+    },
   },
 }));
 
 interface ILayoutProps {
   children?: ReactNode;
+  header?: JSX.Element;
 }
 
-const Layout: FC<ILayoutProps> = ({ children }) => {
+const Layout: FC<ILayoutProps> = ({ header, children }) => {
   const classes = useStyles();
 
   return (
-    <>
-      <Grid container className={classes.container}>
+    <Box className={classes.container}>
+      <Grid container className={classes.row}>
         <Grid item xs={12}>
-          <Box>{children}</Box>
+          {children}
         </Grid>
       </Grid>
-    </>
+    </Box>
   );
 };
 
