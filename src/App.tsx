@@ -1,8 +1,13 @@
 import React from "react";
-import "./App.css";
+import AppTheme from "./AppTheme";
+import Login from "./pages/auth/login";
 
 function App() {
-  return <></>;
+  return (
+    <AppTheme>
+      <Login />
+    </AppTheme>
+  );
 }
 
 export default App;
