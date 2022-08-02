@@ -1,12 +1,11 @@
-import { Box, Grid } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import React, { FC, ReactNode } from "react";
-import { themes } from "../../styles/themes";
+import { Box, Grid, Theme } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     minHeight: "74px",
-    backgroundColor: themes.colors.baseBlack,
+    backgroundColor: theme.palette.secondary.dark,
   },
 }));
 
